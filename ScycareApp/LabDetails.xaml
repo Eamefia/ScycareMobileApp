@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:ScycareApp"
+             x:Class="ScycareApp.LabDetails"
+             Shell.TabBarBackgroundColor="White"
+             Shell.TabBarTitleColor="Black">
+    <ContentPage.BindingContext>
+        <model:DetailMockData />
+    </ContentPage.BindingContext>
+
+    <Shell.TitleView>
+        <StackLayout Orientation="Horizontal"
+                     BackgroundColor="White"
+                     WidthRequest="345">
+            <Entry TextColor="Black"
+                   Margin="10,0,0,0"
+                   WidthRequest="315"
+                   Placeholder="Search" 
+                   PlaceholderColor="#656973"
+                   HeightRequest="35" />
+            <ImageButton Source="searchicon.png"
+                                 HeightRequest="15"
+                                 Margin="0,0,10,0"
+                                 HorizontalOptions="EndAndExpand"
+                                 WidthRequest="15"
+                                 Aspect="AspectFit" />
+
+            <ImageButton Source="slidershorizontal.png"
+                         HeightRequest="18"
+                         HorizontalOptions="EndAndExpand"
+                         WidthRequest="18" 
+                         Aspect="AspectFit" />
+        </StackLayout>
+    </Shell.TitleView>
+    <StackLayout>
+        <StackLayout Orientation="Horizontal"  Margin="15">
+            <Frame WidthRequest="72"
+                       Padding="0"
+                       BorderColor="White"
+                       HeightRequest="72" 
+                       CornerRadius="50">
+                <Image Source="indtest.png" Aspect="AspectFill"/>
+            </Frame>
+            <StackLayout VerticalOptions="Center" 
+                             Margin="15"
+                             HorizontalOptions="Fill">
+                <Label Text="Full Blood Count; FBC"
+                           TextColor="#656973"
+                           FontFamily="Poppins"
+                           FontSize="15"
+                           FontAttributes="Bold"/>
+                <Label Text="Stadtlohn Bezaleel Clinic"
+                           TextColor="#CC828282"
+                           FontFamily="Poppins"
+                           FontSize="12"
+                           FontAttributes="None"/>
+                <Label Text="GH¢45.00"
+                           TextColor="#656973"
+                           HorizontalOptions="Start"
+                           FontSize="12"
+                           FontFamily="Poppins"
+                           FontAttributes="Bold"/>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout>
+            <Label Text="Description"
+                   Margin="15,10,15,10"
+                   TextColor="#656973"
+                   FontAttributes="Bold"
+                   FontFamily="Poppins"
+                   FontSize="15"/>
+            <Label Text="The Full Blood Count (FBC) is a group of tests performed on a single blood sample that tell us about the different kinds of cells in the blood."
+                   TextColor="#656973"
+                   HorizontalOptions="StartAndExpand"
+                   FontFamily="Poppins"
+                   FontAttributes="None"
+                   Margin="15,0,15,10"
+                   FontSize="12"/>
+            <Button Text="+ Read More"
+                    BackgroundColor="White"
+                    FontFamily="Poppins"
+                    Margin="5,0,1,0"
+                    HorizontalOptions="StartAndExpand"
+                    TextColor="#00C2E7"/>
+        </StackLayout>
+        <StackLayout BindableLayout.ItemsSource="{Binding details}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Orientation="Horizontal"
+                         Grid.Column="0"
+                         HorizontalOptions="StartAndExpand">
+                            <Frame WidthRequest="40"
+                                   Padding="0"
+                                   VerticalOptions="Center"
+                                   BackgroundColor="#e6e6e6"
+                                   BorderColor="#00000000"
+                                   HeightRequest="40" 
+                                   CornerRadius="50">
+                                <Image Source="{Binding ImageUrl}"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       Aspect="Center"/>
+                            </Frame>
+                            <Label Text="{Binding ItemName}"
+                                   FontFamily="Poppins"
+                                   Margin="10"
+                                   VerticalOptions="Center"
+                           TextColor="#828282"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1"
+                                     VerticalOptions="Center"
+                   HorizontalOptions="EndAndExpand">
+                            <Label Text="{Binding Item}"
+                                   FontFamily="Poppins"
+                                   TextColor="#828282"
+                   />
+                        </StackLayout>
+
+                    </Grid>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+            
+        </StackLayout>
+        <!--<StackLayout Orientation="Horizontal"
+                     VerticalOptions="EndAndExpand"
+                     HorizontalOptions="Center"
+                     Margin="15">
+            <Button Text="Add to Cart" 
+                    WidthRequest="164"
+                     TextColor="#00C2E7"
+                    FontFamily="Poppins"
+                    BorderWidth="1"
+                    Margin="5"
+                    BorderColor="#00C2E7"
+                    Background="white"
+                    />
+            <Button Text="Add to Cart" 
+                    FontFamily="Poppins"
+                    WidthRequest="164"
+                    TextColor="White"
+                    Margin="5"
+                    BorderColor="#00C2E7"
+                    Background="#00C2E7"
+                    />
+        </StackLayout>-->
+    </StackLayout>
+</ContentPage>

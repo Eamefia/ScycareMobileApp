@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:requests="clr-namespace:ScycareApp"
+             xmlns:vm="clr-namespace:ScycareApp.ViewModel"
+             x:Class="ScycareApp.LabRequestItems"
+             Title="LabRequestItems"
+             ControlTemplate="{DynamicResource IndividualTest}">
+    <ContentPage.BindingContext>
+        <vm:RequestLabTestViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Triggers>
+        <DataTrigger TargetType="ContentPage"
+                        Binding="{Binding PositionSelected}"
+                        Value="2">
+            <Setter Property="ControlTemplate" Value="{DynamicResource IndividualTest}" />
+        </DataTrigger>
+    </ContentPage.Triggers>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="IndividualTest1">
+                <requests:IndividualTest />
+            </ControlTemplate>
+            <ControlTemplate x:Key="IndividualTest2">
+                <requests:IndividualTest />
+            </ControlTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+</ContentPage>

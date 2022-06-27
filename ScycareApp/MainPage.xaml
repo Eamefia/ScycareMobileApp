@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScycareApp.MainPage"
+             xmlns:viewmodel="clr-namespace:ScycareApp.ViewModel"
+             x:DataType="viewmodel:MainPageViewModel"
+             Shell.BackgroundColor="White">
+    
+    
+    <StackLayout Margin="20">
+        <Image Source="scylogo.png"  
+               HorizontalOptions="Center"
+               Margin="0,100,0, 45"
+               Aspect="AspectFill" />
+        <Border Margin="10"
+                Padding="15,2,2,2"
+                StrokeThickness="1"
+                Stroke="#E6E6E6">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+            <Entry  TextColor="Black" Placeholder="Enter your number" HeightRequest="35" />
+        </Border>
+        <Border  Margin="10,10,10,20"
+                 Padding="15,2,2,2"
+                 StrokeThickness="1"
+                 Stroke="#E6E6E6">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+            <Entry  TextColor="Black"  
+                    HeightRequest="35"
+                    IsPassword="True"
+                    Placeholder="Password"/>
+        </Border>
+        <Button Text="Sign in"
+                TextColor="White"
+                Margin="10"
+                BackgroundColor="#00C2E7"
+                CornerRadius="10"/>
+
+        <Button Text="Forget Password ?"
+                Background="#ffffff"
+               TextColor="#00C2E7"
+               HorizontalOptions="Center"/>
+        
+        <Border  Margin="10,50,10,10" Padding="8">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="50,50,50,50" />
+            </Border.StrokeShape>
+            <StackLayout Orientation="Horizontal" BackgroundColor="White" HorizontalOptions="Center">
+                <Image Source="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png" Aspect="AspectFill"/>
+                <Label Text="Sign-in with google" Padding="15,0,0,0" />
+            </StackLayout>
+        </Border>
+        <Border  Margin="10" Padding="8">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="50,50,50,50" />
+            </Border.StrokeShape>
+            <StackLayout Orientation="Horizontal" BackgroundColor="White" HorizontalOptions="Center">
+                <Image Source="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Apple-logo.png/640px-Apple-logo.png" Aspect="AspectFill"/>
+                <Label Text="Sign-in with apple" Padding="15,0,0,0" />
+            </StackLayout>
+        </Border>
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     VerticalOptions="EndAndExpand"
+                     Margin="10">
+            <Label Text="New user?" Padding="0,10,10,0"/>
+            <Button Text="Creat a new account" 
+                    TextColor="#00C2E7"
+                    BackgroundColor="White"
+                    Command="{Binding CreateAccountCommand}"/>
+        </StackLayout>
+
+    </StackLayout>
+ 
+</ContentPage>

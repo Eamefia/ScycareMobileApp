@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="ScycareApp.TabbedItemsPage"
+            xmlns:local="clr-namespace:ScycareApp"
+            BackgroundColor="White"
+            TitleColor="Gray"
+            ForegroundColor="Blue"
+            UnselectedColor="Gray">
+
+    <TabBar>
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:IndividualTest}"
+                          Title="     Individual Test"/>
+            <ShellContent ContentTemplate="{DataTemplate local:IndividualTest}"
+                          Title="          Lab Packages" />
+        </Tab>
+    </TabBar>
+</Shell>

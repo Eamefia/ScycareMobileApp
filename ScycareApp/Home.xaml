@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScycareApp.Home"
+             Title="Home"
+             xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
+             Shell.NavBarIsVisible="False">
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" Margin="15,50,10,15">
+            <Frame Padding="0" CornerRadius="50" WidthRequest="50" HeightRequest="50">
+                <Image Source="userimage.png" Aspect="AspectFill"/>
+            </Frame>
+            <StackLayout VerticalOptions="Center" Margin="10,0,0,0">
+                <Label Text="Welcome back" TextColor="#656973" />
+                <Label Text="Jess" TextColor="#00C2E7"
+                       FontSize="15"
+                       FontAttributes="Bold"/>
+            </StackLayout>
+            <Border Padding="0" 
+                    HorizontalOptions="EndAndExpand"
+                    WidthRequest="30" 
+                    HeightRequest="30">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="50,50,50,50" />
+                </Border.StrokeShape>
+                <Image Source="notification.png" 
+                       Aspect="AspectFill" HorizontalOptions="Center"
+                       WidthRequest="12" HeightRequest="12"/>
+            </Border>
+
+        </StackLayout>
+        <StackLayout>
+            <telerik:RadPopup.Popup>
+                <telerik:RadPopup x:Name="popup2"
+                        IsModal="True"
+                        Placement="Center"
+                        VerticalOffset="20"
+                        OutsideBackgroundColor="#6F000000">
+                    <telerik:RadBorder CornerRadius="8" 
+                             BackgroundColor="White">
+                        <StackLayout>
+                            <Label Text="Personal Details" 
+                                   FontSize="24"
+                                   Margin="10,10,10,0"
+                                   FontFamily="Poppins"
+                                   FontAttributes="Bold"
+                                   TextColor="#656973"/>
+                            <Label Text="Please update these information" 
+                                   TextColor="#99656973"
+                                   Margin="10,0,10,10"
+                                   FontSize="12"/>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    WidthRequest="340"
+                                    Stroke="#E6E6E6"
+                                    StrokeThickness="1">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" 
+                                       Placeholder="Your Maiden Name" 
+                                        HeightRequest="35" />
+                            </Border>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    Stroke="#E6E6E6"
+                                    StrokeThickness="1"
+                                    WidthRequest="340">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" Placeholder="Marital Status" HeightRequest="35" />
+
+                            </Border>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    Stroke="#E6E6E6"
+                                    WidthRequest="340"
+                                    StrokeThickness="1">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" Placeholder="Gender" HeightRequest="35" />
+
+                            </Border>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    Stroke="#E6E6E6"
+                                    WidthRequest="340"
+                                    StrokeThickness="1">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" Placeholder="Date of Birth" HeightRequest="35" />
+
+                            </Border>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    Stroke="#E6E6E6"
+                                    WidthRequest="340"
+                                    StrokeThickness="1">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" Placeholder="Blood Group" HeightRequest="35" />
+
+                            </Border>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    Stroke="#E6E6E6"
+                                    WidthRequest="340"
+                                    StrokeThickness="1">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" Placeholder="Weight" HeightRequest="35" />
+
+                            </Border>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    Stroke="#E6E6E6"
+                                    WidthRequest="340"
+                                    StrokeThickness="1">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" Placeholder="Height" HeightRequest="35" />
+
+                            </Border>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    Stroke="#E6E6E6"
+                                    WidthRequest="340"
+                                    StrokeThickness="1">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" Placeholder="Denomination" HeightRequest="35" />
+
+                            </Border>
+                            <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="End"
+                                         HorizontalOptions="Center"
+                                         Margin="15">
+                                <Button Text="Complete profile" 
+                                        WidthRequest="164"
+                                        TextColor="#00C2E7"
+                                        Clicked="Button_Clicked_1"
+                                        FontFamily="Poppins"
+                                        BorderWidth="1"
+                                        Margin="0,5,5,5"
+                                        BorderColor="#00C2E7"
+                                        Background="white">
+
+                                </Button>
+
+                                <Button Text="Go to Dashboard" 
+                                        FontFamily="Poppins"
+                                        WidthRequest="164"
+                                        TextColor="White"
+                                        Margin="5"
+                                        BorderColor="#00C2E7"
+                                        Background="#00C2E7"
+                                       />
+                            </StackLayout>
+                        </StackLayout>
+
+                    </telerik:RadBorder>
+                </telerik:RadPopup>
+            </telerik:RadPopup.Popup>
+        </StackLayout>
+        <StackLayout>
+            <telerik:RadPopup.Popup>
+                <telerik:RadPopup x:Name="popup"
+                                  IsModal="True"
+                                  Placement="Center"
+                                  VerticalOffset="20"
+                                  OutsideBackgroundColor="#6F000000">
+                    <telerik:RadBorder CornerRadius="8" 
+                                       BackgroundColor="White">
+                        <StackLayout>
+                            <Label Text="Personal Details" 
+                                   FontSize="24"
+                                   Margin="10,10,10,0"
+                                   FontFamily="Poppins"
+                                   FontAttributes="Bold"
+                                   TextColor="#656973"/>
+                            <Label Text="Please update these information" 
+                                   TextColor="#99656973"
+                                   Margin="10,0,10,10"
+                                   FontSize="12"/>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    WidthRequest="340"
+                                    Stroke="#E6E6E6"
+                                    StrokeThickness="1">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" 
+                                       Placeholder="First Name"
+                                       HeightRequest="35" />
+                            </Border>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    Stroke="#E6E6E6"
+                                    StrokeThickness="1"
+                                    WidthRequest="340">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" Placeholder="Last Name" HeightRequest="35" />
+
+                            </Border>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    Stroke="#E6E6E6"
+                                    WidthRequest="340"
+                                    StrokeThickness="1">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" Placeholder="Email" HeightRequest="35" />
+
+                            </Border>
+
+                            <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="End"
+                                         HorizontalOptions="Center"
+                                         Margin="15">
+                                <Button Text="Complete profile" 
+                                        WidthRequest="164"
+                                        TextColor="#00C2E7"
+                                        FontFamily="Poppins"
+                                        BorderWidth="1"
+                                        Clicked="Button_Clicked"
+                                        Margin="0,5,5,5"
+                                        BorderColor="#00C2E7"
+                                        Background="white"/>
+                                <Button Text="Go to Dashboard" 
+                                        FontFamily="Poppins"
+                                        WidthRequest="164"
+                                        TextColor="White"
+                                        Margin="5"
+                                        BorderColor="#00C2E7"
+                                        Background="#00C2E7"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                    </telerik:RadBorder>
+                </telerik:RadPopup>
+            </telerik:RadPopup.Popup>
+        </StackLayout>
+        <StackLayout>
+            <telerik:RadPopup.Popup>
+                <telerik:RadPopup x:Name="popup4"
+                        IsModal="True"
+                        Placement="Center"
+                        VerticalOffset="20"
+                        OutsideBackgroundColor="#6F000000">
+                    <telerik:RadBorder CornerRadius="8" 
+                             BackgroundColor="White">
+                        <StackLayout>
+                            <Label Text="Adress Information" 
+                                   FontSize="24"
+                                   Margin="10,10,10,0"
+                                   FontFamily="Poppins"
+                                   FontAttributes="Bold"
+                                   TextColor="#656973"/>
+                            <Label Text="Delivery/Pickup address" 
+                                   TextColor="#99656973"
+                                   Margin="10,0,10,10"
+                                   FontSize="12"/>
+                            <Label Text="Pickup address" 
+                                   TextColor="#656973"
+                                   Margin="10,0,10,10"
+                                   FontSize="12"/>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    WidthRequest="340"
+                                    Stroke="#E6E6E6"
+                                    StrokeThickness="1">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" 
+                                       Placeholder="Your Maiden Name" 
+                                        HeightRequest="35" />
+                            </Border>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    Stroke="#E6E6E6"
+                                    StrokeThickness="1"
+                                    WidthRequest="340">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" Placeholder="Name" HeightRequest="35" />
+
+                            </Border>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    Stroke="#E6E6E6"
+                                    WidthRequest="340"
+                                    StrokeThickness="1">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" Placeholder="Address" HeightRequest="35" />
+
+                            </Border>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    Stroke="#E6E6E6"
+                                    WidthRequest="340"
+                                    StrokeThickness="1">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" Placeholder="City" HeightRequest="35" />
+
+                            </Border>
+
+                            <Label Text="Pickup address" 
+                                   TextColor="#656973"
+                                   Margin="10,0,10,10"
+                                   FontSize="12"/>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    WidthRequest="340"
+                                    Stroke="#E6E6E6"
+                                    StrokeThickness="1">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" 
+                                       Placeholder="Your Maiden Name" 
+                                        HeightRequest="35" />
+                            </Border>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    Stroke="#E6E6E6"
+                                    StrokeThickness="1"
+                                    WidthRequest="340">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" Placeholder="Name" HeightRequest="35" />
+
+                            </Border>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    Stroke="#E6E6E6"
+                                    WidthRequest="340"
+                                    StrokeThickness="1">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" Placeholder="Address" HeightRequest="35" />
+
+                            </Border>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    Stroke="#E6E6E6"
+                                    WidthRequest="340"
+                                    StrokeThickness="1">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" Placeholder="City" HeightRequest="35" />
+
+                            </Border>
+                            <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="End"
+                                         HorizontalOptions="Center"
+                                         Margin="15">
+                                <Button Text="Complete profile" 
+                                        WidthRequest="164"
+                                        TextColor="#00C2E7"
+                                        FontFamily="Poppins"
+                                        BorderWidth="1"
+                                        Clicked="Button_Clicked_2"
+                                        Margin="0,5,5,5"
+                                        BorderColor="#00C2E7"
+                                        Background="white"
+                                       />
+                                <Button Text="Go to Dashboard" 
+                                        FontFamily="Poppins"
+                                        WidthRequest="164"
+                                        TextColor="White"
+                                        Margin="5"
+                                        BorderColor="#00C2E7"
+                                        Background="#00C2E7"
+                                       />
+                            </StackLayout>
+                        </StackLayout>
+
+                    </telerik:RadBorder>
+                </telerik:RadPopup>
+            </telerik:RadPopup.Popup>
+        </StackLayout>
+        <StackLayout>
+            <telerik:RadPopup.Popup>
+                <telerik:RadPopup x:Name="popup3"
+                        IsModal="True"
+                        Placement="Center"
+                        VerticalOffset="20"
+                        OutsideBackgroundColor="#6F000000">
+                    <telerik:RadBorder CornerRadius="8" 
+                             BackgroundColor="White">
+                        <StackLayout>
+                            <Label Text="Adress Information" 
+                                   FontSize="24"
+                                   Margin="10,10,10,0"
+                                   FontFamily="Poppins"
+                                   FontAttributes="Bold"
+                                   TextColor="#656973"/>
+                            <Label Text="Residential address" 
+                                   TextColor="#99656973"
+                                   Margin="10,0,10,10"
+                                   FontSize="12"/>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    WidthRequest="340"
+                                    Stroke="#E6E6E6"
+                                    StrokeThickness="1">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" 
+                                       Placeholder="Mobile Number" 
+                                        HeightRequest="35" />
+                            </Border>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    Stroke="#E6E6E6"
+                                    StrokeThickness="1"
+                                    WidthRequest="340">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" Placeholder="Address" HeightRequest="35" />
+
+                            </Border>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    Stroke="#E6E6E6"
+                                    WidthRequest="340"
+                                    StrokeThickness="1">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" Placeholder="City" HeightRequest="35" />
+
+                            </Border>
+                            <Border Padding="15,2,15,2"
+                                    Margin="10,16,10,0"
+                                    Stroke="#E6E6E6"
+                                    WidthRequest="340"
+                                    StrokeThickness="1">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Entry TextColor="Black" Placeholder="Ghana Post GPS" HeightRequest="35" />
+
+                            </Border>
+                            <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="End"
+                                         HorizontalOptions="Center"
+                                         Margin="15">
+                                <Button Text="Complete profile" 
+                                        WidthRequest="164"
+                                        TextColor="#00C2E7"
+                                        FontFamily="Poppins"
+                                        BorderWidth="1"
+                                        Clicked="Button_Clicked_2"
+                                        Margin="0,5,5,5"
+                                        BorderColor="#00C2E7"
+                                        Background="white"
+                                       />
+                                <Button Text="Go to Dashboard" 
+                                        FontFamily="Poppins"
+                                        WidthRequest="164"
+                                        TextColor="White"
+                                        Margin="5"
+                                        BorderColor="#00C2E7"
+                                        Background="#00C2E7"
+                                       />
+                            </StackLayout>
+                        </StackLayout>
+
+                    </telerik:RadBorder>
+                </telerik:RadPopup>
+            </telerik:RadPopup.Popup>
+        </StackLayout>
+        <StackLayout BackgroundColor="White"
+                     HorizontalOptions="StartAndExpand">
+            <Label Text="Discover"
+                      TextColor="#656973"
+                      FontSize="36"
+                      LineHeight="45"
+                      Margin="15,0,0,0"
+                      FontAttributes="Bold"/>
+            <Label Text="Scycare"
+                      TextColor="#656973"
+                      FontSize="36"
+                      LineHeight="45"
+                      Margin="15,0,0,0"
+                      FontAttributes="Bold"/>
+        </StackLayout>
+       
+        <StackLayout Orientation="Horizontal"
+                     HeightRequest="100"
+                     Margin="15"
+                     BackgroundColor="#0F656973">
+            
+            <Image Source="record.png" 
+                   Margin="15,0,0,0"
+                   Aspect="AspectFill" HorizontalOptions="Center"
+                   WidthRequest="37" HeightRequest="50"/>
+            <StackLayout VerticalOptions="Center">
+                <Label Text="Medical Health Record"
+                           FontSize="15"
+                           Margin="15,0,0,0"
+                           FontAttributes="Bold"
+                           TextColor="#656973"/>
+                <Label Text="Access all your health records anytime and anywhere."
+                           FontSize="12"
+                           Margin="15,0,0,0"
+                           WidthRequest="200"
+                           TextColor="#CC828282"/>
+            </StackLayout>
+            <Image Source="arrowright.png" 
+                   Margin="0,0,15,0"
+                   WidthRequest="12"
+                   HeightRequest="8"
+                   Aspect="AspectFit" 
+                   HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"
+                     HeightRequest="100"
+                     Margin="15,10,15,10"
+                     BackgroundColor="#0F656973"
+                     x:Name="Laprequest">
+
+            <Image Source="labrequest.png" 
+                   Margin="15,0,0,0"
+                   Aspect="AspectFill" HorizontalOptions="Center"
+                   WidthRequest="41" HeightRequest="50"/>
+            <StackLayout VerticalOptions="Center">
+                <Label Text="Request Lab Test"
+                           FontSize="15"
+                           Margin="15,0,0,0"
+                           FontAttributes="Bold"
+                           TextColor="#656973"/>
+                <Label Text="Request for your tests at the comfort of your homes."
+                           FontSize="12"
+                           Margin="15,0,0,0"
+                           WidthRequest="200"
+                           TextColor="#CC828282"/>
+            </StackLayout>
+            <ImageButton Source="arrowright.png" 
+                   Margin="0,0,15,0"
+                   Clicked="ImageButton_Clicked"  
+                   WidthRequest="12"
+                   HeightRequest="8"
+                   Aspect="AspectFit" 
+                   HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+        <Frame WidthRequest="45"
+                Margin="20"
+               Padding="0"
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="EndAndExpand"
+                BackgroundColor="#00C2E7"
+                CornerRadius="50"
+                HeightRequest="45">
+            
+            <Image Source="plusicon.png" 
+                   WidthRequest="18"
+                   HeightRequest="17"
+                   Aspect="AspectFit" />
+        </Frame>
+        
+    </StackLayout>
+</ContentPage>

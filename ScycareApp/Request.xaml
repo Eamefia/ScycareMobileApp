@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:ScycareApp"
+            Size="360,340"
+            xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+            x:Class="ScycareApp.Request">
+
+    <Frame Padding="0"
+           WidthRequest="370"
+           HeightRequest="350"
+           BackgroundColor="White"
+           CornerRadius="25">
+        <StackLayout>
+            <Label Text="almost done!" 
+               FontSize="24"
+               Margin="10,10,10,0"
+               FontFamily="Poppins"
+               FontAttributes="Bold"
+               TextColor="#656973"/>
+            <Label Text="Please update these information" 
+               TextColor="#99656973"
+               Margin="10,0,10,10"
+               FontSize="12"/>
+            <Border Padding="15,2,15,2"
+                Margin="10,16,10,0"
+                WidthRequest="340"
+                Stroke="#E6E6E6"
+                StrokeThickness="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10" />
+                </Border.StrokeShape>
+                <Entry TextColor="Black" 
+                       Placeholder="First name" 
+                       HeightRequest="35" />
+
+            </Border>
+            <Border Padding="15,2,15,2"
+                Margin="10,16,10,0"
+                Stroke="#E6E6E6"
+                StrokeThickness="1"
+                WidthRequest="340">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10" />
+                </Border.StrokeShape>
+                <Entry TextColor="Black" Placeholder="Last name" HeightRequest="35" />
+
+            </Border>
+            <Border Padding="15,2,15,2"
+                Margin="10,16,10,0"
+                Stroke="#E6E6E6"
+                WidthRequest="340"
+                StrokeThickness="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10" />
+                </Border.StrokeShape>
+                <Entry TextColor="Black" Placeholder="Email" HeightRequest="35" />
+
+            </Border>
+            <StackLayout Orientation="Horizontal"
+                     VerticalOptions="End"
+                     HorizontalOptions="Center"
+                     Margin="15">
+                <Button Text="Complete profile" 
+                    WidthRequest="164"
+                    TextColor="#00C2E7"
+                    FontFamily="Poppins"
+                    BorderWidth="1"
+                    Margin="0,5,5,5"
+                    BorderColor="#00C2E7"
+                    Background="white"
+                    />
+                <Button Text="Go to Dashboard" 
+                    FontFamily="Poppins"
+                    WidthRequest="164"
+                    TextColor="White"
+                    Margin="5"
+                    BorderColor="#00C2E7"
+                    Background="#00C2E7"
+                    />
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+    
+
+</toolkit:Popup>

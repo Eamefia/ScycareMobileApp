@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScycareApp.VerifyCode"
+             Title="VerifyCode"
+             Shell.NavBarIsVisible="False"
+             xmlns:viewmodel="clr-namespace:ScycareApp.ViewModel"
+             x:DataType="viewmodel:VerifyCodeViewModel">
+    <StackLayout Margin="20">
+        <Image Source="scylogo.png"  
+               HorizontalOptions="Center"
+               Margin="0,100,0, 25"
+               Aspect="AspectFill"/>
+
+        <Label Text="Create an account"
+               TextColor="#00C2E7"
+               Margin="0,0,0,170"
+               HorizontalOptions="Center"/>
+        <StackLayout Margin="10" Orientation="Horizontal">
+            <Border  Padding="2"
+                     StrokeThickness="1"
+                     Stroke="#E6E6E6">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10,0,10,0" />
+                </Border.StrokeShape>
+                <Label Text="+233" 
+                       VerticalOptions="Center" 
+                       TextColor="#656973"
+                       Padding="10,0,10,3"/>
+
+            </Border>
+            <Border  Padding="15,2,2,2"
+                     Stroke="#E6E6E6"
+                     StrokeThickness="1"
+                     WidthRequest="278"
+                     HorizontalOptions="StartAndExpand">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="0,10,0,10" />
+                </Border.StrokeShape>
+                <Entry TextColor="Black" 
+                       Placeholder="Enter your number" 
+                       HeightRequest="35" 
+                       Text="{Binding Number}"
+                       IsReadOnly="True"/>
+
+            </Border>
+        </StackLayout>
+        <Border  Padding="15,0,0,0"
+                 Margin="10"
+                 Stroke="#E6E6E6">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+            <Entry TextColor="Black" 
+                   Placeholder="Enter your number" 
+                   HeightRequest="35" 
+                   Text="{Binding Otpcode}"/>
+
+        </Border>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="*"/>
+                <ColumnDefinition  Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Text="Verify"
+                    Grid.Column="0"
+                    TextColor="White"
+                    Margin="10"
+                    BackgroundColor="#00C2E7"
+                    CornerRadius="10"
+                    Command="{Binding VerifyCommand}"/>
+
+
+            <Button Text="Send new code"
+                        Margin="10" Grid.Column="1" 
+                        Padding="1"
+                        BorderWidth="1"
+                        CornerRadius="10"
+                        BorderColor="#00C2E7"
+                        TextColor="#00C2E7"
+                        BackgroundColor="White"/>
+
+        </Grid>
+
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     VerticalOptions="EndAndExpand"
+                     Margin="10">
+            <Label Text="Already have an account?" 
+                   TextColor="#656973"
+                   Padding="0,0,10,0"/>
+            <Label Text="Login" TextColor="#00C2E7"/>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>
